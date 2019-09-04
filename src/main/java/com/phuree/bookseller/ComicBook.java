@@ -55,6 +55,21 @@ public class ComicBook implements Book {
 	
 	public String getDetails() {
 		String details = String.format("{\"serailID\": \"%s\"", this.serial);
+		details += ",\"size\": ";
+		details += String.format("\"%1$,.2f inches ", this.width);
+		details += String.format("x %1$,.2f inches\"", this.height);
+		details += String.format(",\"pages\": %d", this.pages);
+		details += String.format(",\"price\": %d", this.price);
+		details += String.format(", \"title\": \"%s\"", this.title);
+		details += ", \"type\": \"comic book\"}";
 		return details;
+	}
+
+	public String getTitle() {
+		return title;
+	}
+
+	public void setTitle(String title) {
+		this.title = title;
 	}
 }

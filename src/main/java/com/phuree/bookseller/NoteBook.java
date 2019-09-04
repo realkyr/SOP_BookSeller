@@ -47,13 +47,19 @@ public class NoteBook implements Book {
 		this.price = price;
 	}
 	
-	public void setSize(int width, int height) {
+	public void setSize(double width, double height) {
 		this.setHeight(height);
 		this.setWidth(width);
 	}
 	
 	public String getDetails() {
 		String details = String.format("{\"serailID\": \"%s\"", this.serial);
+		details += ",\"size\": ";
+		details += String.format("\"%1$,.2f inches ", this.width);
+		details += String.format("x %1$,.2f inches\"", this.height);
+		details += String.format(",\"pages\": %d", this.pages);
+		details += String.format(",\"price\": %d", this.price);
+		details += ", \"type\": \"notebook\"}";
 		return details;
 	}
 }
