@@ -7,6 +7,17 @@ public class ComicBook implements Book {
 	double height;
 	int pages;
 	int price;
+	
+	public ComicBook() {}
+	
+	public ComicBook(String serial, String title, int pages, int price) {
+		super();
+		this.serial = serial;
+		this.title = title;
+		this.pages = pages;
+		this.price = price;
+		this.setSize();
+	}
 
 	public String getSerial() {
 		return serial;
@@ -54,7 +65,7 @@ public class ComicBook implements Book {
 	}
 	
 	public String getDetails() {
-		String details = String.format("{\"serailID\": \"%s\"", this.serial);
+		String details = String.format("{\"serialID\": \"%s\"", this.serial);
 		details += ",\"size\": ";
 		details += String.format("\"%1$,.2f inches ", this.width);
 		details += String.format("x %1$,.2f inches\"", this.height);

@@ -6,6 +6,17 @@ public class NoteBook implements Book {
 	double height;
 	int pages;
 	int price;
+	
+	public NoteBook() {}
+	
+	public NoteBook(String serial, double width, double height, int pages, int price) {
+		super();
+		this.serial = serial;
+		this.width = width;
+		this.height = height;
+		this.pages = pages;
+		this.price = price;
+	}
 
 	public String getSerial() {
 		return serial;
@@ -53,7 +64,7 @@ public class NoteBook implements Book {
 	}
 	
 	public String getDetails() {
-		String details = String.format("{\"serailID\": \"%s\"", this.serial);
+		String details = String.format("{\"serialID\": \"%s\"", this.serial);
 		details += ",\"size\": ";
 		details += String.format("\"%1$,.2f inches ", this.width);
 		details += String.format("x %1$,.2f inches\"", this.height);
